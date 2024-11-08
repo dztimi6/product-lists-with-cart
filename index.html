@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading">Desserts</h1>
+      <div class="desserts-container">
+        <!-- Waffle -->
+        <div class="desserts">
+          <div class="dessert-img">
+            <picture>
+              <!-- for mobile -->
+              <source
+                media="(max-width:480px)"
+                srcset="./assets/images/image-waffle-mobile.jpg"
+              />
+              <!-- for tablet -->
+              <source
+                media="(max-width:768px)"
+                srcset="./assets/images/image-waffle-tablet.jpg"
+              />
+              <!-- for desktop -->
+              <img
+                src="./assets/images/image-waffle-desktop.jpg"
+                alt="waffle-img"
+              />
+            </picture>
+            <button class="cart-btn">
+              <div class="cart-img">
+                <img
+                  src="./assets/images/icon-add-to-cart.svg"
+                  alt="cart-img"
+                />
+                <p>Add to Cart</p>
+              </div>
+            </button>
+
+            <div class="counter hidden">
+              <button class="sign minus flex">
+                <img
+                  src="./assets/images/icon-decrement-quantity.svg"
+                  alt="decrement sign"
+                />
+              </button>
+              <input type="text" id="cart-counter-value" value="0" readonly />
+              <button class="sign plus flex">
+                <img
+                  src="./assets/images/icon-increment-quantity.svg"
+                  alt="increment sign"
+                />
+              </button>
+            </div>
+          </div>
+          <p class="name">NAME</p>
+          <p class="category">CATEGORY</p>
+          <p class="price">PRICE</p>
+        </div>
+      </div>
+
+      <!-- cart section -->
+      <div class="cart empty">
+        <h2>Your Cart (0)</h2>
+        <div class="empty-cart">
+          <img
+            src="./assets/images/illustration-empty-cart.svg"
+            alt="empty-cart-img"
+          />
+          <p>Your added items will appear here</p>
+        </div>
+      </div>
+
+      <!-- Order section -->
+      <div class="cart full-cart">
+        <h2>Your Cart (<span class="order-size">7</span>)</h2>
+        <div class="order-details">
+          <div class="ordered-desserts flex">
+            <div class="order">
+              <p class="category">Classic Tiamisu</p>
+              <div class="quantity-section">
+                <p class="quantity">1x</p>
+                <div class="price-section">
+                  <p class="unit-price">@ $5.50</p>
+                  <p class="quantity-price">$5.50</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="remove-item-icon flex">
+              <img
+                src="./assets/images/icon-remove-item.svg"
+                alt="remove-item-icon"
+              />
+            </button>
+          </div>
+          <!-- <hr /> -->
+        </div>
+
+        <div class="total flex">
+          <p>Order Total</p>
+          <p class="total-prise prise">$46.50</p>
+        </div>
+
+        <div class="carbon-neutral flex">
+          <div>
+            <img
+              src="./assets/images/icon-carbon-neutral.svg"
+              alt="icon-carbon-neutral"
+            />
+          </div>
+          <p>This is a <span>carbon-neutral</span> delivery</p>
+        </div>
+
+        <button class="order-btn">Confirm Order</button>
+      </div>
+
+      <div class="success-page hidden">
+        <div class="success-icon">
+          <img
+            src="./assets/images/icon-order-confirmed.svg"
+            alt="order-confirmed-icon"
+          />
+        </div>
+        <h2 class="order-confirmed-heading">Order Confirmed</h2>
+        <p class="enjoy">We hope you enjoy your food!</p>
+
+        <div class="confirmed-order">
+          <div class="checkout-section">
+            <div class="flex check-out">
+              <div class="order-info">
+                <div class="thumbnail-img">
+                  <img
+                    src="./assets/images/image-baklava-thumbnail.jpg"
+                    alt="image-baklava-thumbnail"
+                  />
+                </div>
+                <div>
+                  <div class="category single-line-ellipsis">
+                    Pistachio Baklava
+                  </div>
+                  <div class="quantity-section">
+                    <p class="quantity">1x</p>
+                    <p class="unit-price">@ $4.00</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="quantity-price">$4.00</p>
+            </div>
+            <hr />
+          </div>
+        </div>
+        <div class="total flex confirmed-order-total">
+          <p class="order-p">Order Total</p>
+          <p class="total-price prise confirmed-order-price">$46.50</p>
+        </div>
+        <button type="submit" class="order-btn check-out-btn">
+          Start New Order
+        </button>
+      </div>
+    </main>
+    <div class="overlay hidden"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
